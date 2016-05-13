@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"sample",
+				"sample_sent	param"
+			],
+			[
+				"sampl",
+				"sample_sent"
+			],
+			[
+				"pron",
+				"pron_file	param"
+			],
+			[
+				"pro",
+				"pron_file"
+			],
+			[
 				"mp3",
 				"mp3play	module"
 			],
@@ -201,18 +217,10 @@
 			}
 		},
 		{
-			"file": "/D/GitClonePath/RiceRocks/RiceRocks/rice_rocks.py",
+			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 8256,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/GitClonePath/RiceRocks/RiceRocks/main.py",
-			"settings":
-			{
-				"buffer_size": 5502,
+				"buffer_size": 792,
 				"line_ending": "Windows"
 			}
 		}
@@ -298,6 +306,8 @@
 	},
 	"file_history":
 	[
+		"/D/GitClonePath/RiceRocks/RiceRocks/main.py",
+		"/D/GitClonePath/RiceRocks/RiceRocks/rice_rocks.py",
 		"/D/GitClonePath/CastTheSpell/CastTheSpell.sublime-project",
 		"/C/Users/Yinzhe/AppData/Local/Temp/Yinzhe/mcrCache7.14/Finger0/Fingerprinti/GenerateSignal.m",
 		"/E/硕士/项目/ESMD/调制方式识别-季涛/程序/软件save/ModulationRecognitionV3.0 - 副本/ModulationRecognition/AgSal.cs",
@@ -306,7 +316,6 @@
 		"/C/Users/Yinzhe/Desktop/Quick E-C Dictionary.txt",
 		"/D/GitClonePath/module 4/Provide code and solution for Application 4.py",
 		"/D/GitClonePath/module 4/Provide code and solution for Application 4",
-		"/D/GitClonePath/RiceRocks/RiceRocks/main.py",
 		"/D/GitClonePath/Falcon/coordinate.py",
 		"/D/GitClonePath/Falcon/falcon.py",
 		"/C/Users/Yinzhe/Desktop/111.map",
@@ -314,7 +323,6 @@
 		"/C/Users/Yinzhe/Desktop/底噪代码/average2arry.m",
 		"/C/Users/Yinzhe/Desktop/底噪代码/min2line4.m",
 		"/C/Users/Yinzhe/Desktop/底噪代码/lsline.m",
-		"/D/GitClonePath/RiceRocks/RiceRocks/rice_rocks.py",
 		"/C/Users/Yinzhe/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Yinzhe/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/D/GitClonePath/Falcon/Falcon.sublime-project",
@@ -374,7 +382,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -390,8 +398,8 @@
 						"selection":
 						[
 							[
-								512,
-								512
+								166,
+								112
 							]
 						],
 						"settings":
@@ -403,67 +411,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/D/GitClonePath/RiceRocks/RiceRocks/rice_rocks.py",
+					"file": "dictionary_EC.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8256,
+						"buffer_size": 792,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39,
-								39
+								198,
+								198
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/GitClonePath/RiceRocks/RiceRocks/main.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5502,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5166,
-								5166
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1890.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
