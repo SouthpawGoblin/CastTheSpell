@@ -4,16 +4,48 @@
 		"selected_items":
 		[
 			[
+				"exc",
+				"Exception	class"
+			],
+			[
+				"ici",
+				"ICIBA_KEY	statement"
+			],
+			[
+				"sam",
+				"sample_sent	statement"
+			],
+			[
+				"trans",
+				"translation	statement"
+			],
+			[
+				"key",
+				"key_word	statement"
+			],
+			[
+				"find",
+				"findall	function"
+			],
+			[
+				"pron",
+				"pron_file	statement"
+			],
+			[
+				"ph",
+				"phonetic_symbol	statement"
+			],
+			[
+				"entry",
+				"Entry	class"
+			],
+			[
 				"sample",
 				"sample_sent	param"
 			],
 			[
 				"sampl",
 				"sample_sent"
-			],
-			[
-				"pron",
-				"pron_file	param"
 			],
 			[
 				"pro",
@@ -211,7 +243,7 @@
 			"file": "CastTheSpell.py",
 			"settings":
 			{
-				"buffer_size": 647,
+				"buffer_size": 717,
 				"line_ending": "Windows",
 				"name": "print 'Hello World!'"
 			}
@@ -220,7 +252,7 @@
 			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 792,
+				"buffer_size": 2739,
 				"line_ending": "Windows"
 			}
 		}
@@ -391,15 +423,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 647,
+						"buffer_size": 717,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								166,
-								112
+								717,
+								717
 							]
 						],
 						"settings":
@@ -420,15 +452,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 792,
+						"buffer_size": 2739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								198,
-								198
+								2111,
+								2111
 							]
 						],
 						"settings":
@@ -436,7 +468,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 972.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -478,7 +510,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 171.0
+		"height": 188.0
 	},
 	"output.find_results":
 	{
