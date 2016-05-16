@@ -3,11 +3,8 @@
 An English-Chinese dictionary module using iciba APIs.
 """
 
-import urllib2
+import urllib.request as urlreq
 import xml.etree.ElementTree as ET
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 
 class Entry:
@@ -16,6 +13,7 @@ class Entry:
     a data structure for translation related parameters
     such as meaning, pronunciation, sample sentences....
     """
+
     def __init__(self, key_word, translation={}, phonetic_symbol='',
                  pron_file='', sample_sent=[]):
         self.key_word = key_word
@@ -43,6 +41,7 @@ class Dictionary:
     class for an English-Chinese dictionary using iciba APIs,
     Internet connection is required.
     """
+
     def __init__(self, iciba_key=None):
         self.__iciba_key = iciba_key
 
@@ -72,13 +71,13 @@ class Dictionary:
             + self.__iciba_key \
             + '&w=' + key_word
         try:
-            f = urllib2.urlopen(url)
+            f = urlreq.urlopen(url)
             return self.__parse_entry_xml(f)
-        except Exception, e:
+        except Exception as e:
             raise e
 
 
 if __name__ == '__main__':
     ICIBA_KEY = '93F4227FB49EDC3B86240A6C2DBF178D'
     dic = Dictionary(ICIBA_KEY)
-    print dic.lookup_online(raw_input())
+    print(dic.lookup_online(input()))

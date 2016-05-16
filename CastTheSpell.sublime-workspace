@@ -240,10 +240,13 @@
 	"buffers":
 	[
 		{
+			"contents": "#-*-coding: utf-8-*-\n\nimport PyQt5",
 			"file": "CastTheSpell.py",
+			"file_size": 745,
+			"file_write_time": 131076988208053012,
 			"settings":
 			{
-				"buffer_size": 717,
+				"buffer_size": 34,
 				"line_ending": "Windows",
 				"name": "print 'Hello World!'"
 			}
@@ -252,7 +255,7 @@
 			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 2739,
+				"buffer_size": 2701,
 				"line_ending": "Windows"
 			}
 		}
@@ -423,15 +426,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 717,
+						"buffer_size": 34,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								717,
-								717
+								34,
+								34
 							]
 						],
 						"settings":
@@ -452,15 +455,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2739,
+						"buffer_size": 2701,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2111,
-								2111
+								664,
+								664
 							]
 						],
 						"settings":
@@ -468,7 +471,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 972.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
