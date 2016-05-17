@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"loca",
+				"setLocale	function"
+			],
+			[
+				"e",
+				"exec	function"
+			],
+			[
+				"main",
+				"main_frame	statement"
+			],
+			[
+				"q",
+				"QtWidgets	module"
+			],
+			[
 				"exc",
 				"Exception	class"
 			],
@@ -240,10 +256,7 @@
 	"buffers":
 	[
 		{
-			"contents": "#-*-coding: utf-8-*-\n\nimport PyQt5",
 			"file": "CastTheSpell.py",
-			"file_size": 745,
-			"file_write_time": 131076988208053012,
 			"settings":
 			{
 				"buffer_size": 34,
@@ -257,6 +270,15 @@
 			{
 				"buffer_size": 2701,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main_frame.py",
+			"settings":
+			{
+				"buffer_size": 560,
+				"line_ending": "Windows",
+				"name": "#-*- coding: utf-8 -*-"
 			}
 		}
 	],
@@ -417,7 +439,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -446,7 +468,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -468,6 +490,35 @@
 						],
 						"settings":
 						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main_frame.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								383,
+								383
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#-*- coding: utf-8 -*-",
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
