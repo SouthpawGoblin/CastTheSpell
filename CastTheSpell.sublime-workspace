@@ -4,6 +4,114 @@
 		"selected_items":
 		[
 			[
+				"set",
+				"SetDefaultConstraint	instance"
+			],
+			[
+				"fra",
+				"frameGeometry	function"
+			],
+			[
+				"setsize",
+				"setSizePolicy	function"
+			],
+			[
+				"size",
+				"size	function"
+			],
+			[
+				"desk",
+				"desk_rect	statement"
+			],
+			[
+				"des",
+				"desk_rect	statement"
+			],
+			[
+				"qapp",
+				"QApplication	class"
+			],
+			[
+				"setsiz",
+				"SetFixedSize	instance"
+			],
+			[
+				"sets",
+				"setSizeConstraint	function"
+			],
+			[
+				"__wgt",
+				"__wgtCentral"
+			],
+			[
+				"sear",
+				"__wgtSearchEdit"
+			],
+			[
+				"setfix",
+				"setFixedHeight	function"
+			],
+			[
+				"__lyt",
+				"__lytSearchBar"
+			],
+			[
+				"__sear",
+				"__wgtSearchEdit"
+			],
+			[
+				"__size",
+				"__mSize"
+			],
+			[
+				"view",
+				"ViewMode	class"
+			],
+			[
+				"qt",
+				"QtWidgets	module"
+			],
+			[
+				"qlist",
+				"QListView	class"
+			],
+			[
+				"wind",
+				"QMainWindow	class"
+			],
+			[
+				"add",
+				"addLayout	function"
+			],
+			[
+				"qla",
+				"QVBoxLayout	class"
+			],
+			[
+				"qbutt",
+				"QPushButton	class"
+			],
+			[
+				"__siz",
+				"__size"
+			],
+			[
+				"setsi",
+				"setBaseSize	function"
+			],
+			[
+				"edit",
+				"QTextEdit	class"
+			],
+			[
+				"font",
+				"setFont	function"
+			],
+			[
+				"setb",
+				"setBaseSize	function"
+			],
+			[
 				"loca",
 				"setLocale	function"
 			],
@@ -276,7 +384,7 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 560,
+				"buffer_size": 2498,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
 			}
@@ -420,6 +528,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tmp_lyt",
+			"wgtSearchButton",
+			"wgtSearchEdit",
 			"hide",
 			"hide_snippets_on_completion "
 		],
@@ -429,6 +540,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"self.__lytSearchBar",
+			"self.__wgtSearchButton",
+			"self.__wgtSearchEdit"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -493,7 +607,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 918.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -505,15 +619,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 560,
+						"buffer_size": 2498,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								383,
-								383
+								2457,
+								2457
 							]
 						],
 						"settings":
@@ -522,7 +636,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -537,7 +651,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -574,7 +688,7 @@
 	"project": "CastTheSpell.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
