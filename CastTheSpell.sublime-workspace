@@ -4,6 +4,90 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"destroyed	function"
+			],
+			[
+				"cl",
+				"closeEvent	function"
+			],
+			[
+				"__wgt",
+				"__wgtTrayIcon"
+			],
+			[
+				"qpix",
+				"QPixmap	class"
+			],
+			[
+				"__mma",
+				"__mMainIcon"
+			],
+			[
+				"add",
+				"addItem	function"
+			],
+			[
+				"qbox",
+				"QSpinBox	class"
+			],
+			[
+				"__mm",
+				"__mMainIcon"
+			],
+			[
+				"__slot",
+				"__slotTrayIcon_LeftClicked"
+			],
+			[
+				"ena",
+				"setEnabled	function"
+			],
+			[
+				"qt",
+				"QtCore"
+			],
+			[
+				"click",
+				"clicked	function"
+			],
+			[
+				"al",
+				"AlignCenter	instance"
+			],
+			[
+				"setfix",
+				"setFixedSize	function"
+			],
+			[
+				"setfixed",
+				"setFixedSize	function"
+			],
+			[
+				"__lyt",
+				"__lytTitleBar"
+			],
+			[
+				"colla",
+				"collapse_icon	statement"
+			],
+			[
+				"qdia",
+				"QDialog	class"
+			],
+			[
+				"frame",
+				"frameSize	function"
+			],
+			[
+				"qwindow",
+				"QMainWindow	class"
+			],
+			[
+				"size",
+				"sizeHint	function"
+			],
+			[
 				"set",
 				"SetDefaultConstraint	instance"
 			],
@@ -14,10 +98,6 @@
 			[
 				"setsize",
 				"setSizePolicy	function"
-			],
-			[
-				"size",
-				"size	function"
 			],
 			[
 				"desk",
@@ -40,20 +120,8 @@
 				"setSizeConstraint	function"
 			],
 			[
-				"__wgt",
-				"__wgtCentral"
-			],
-			[
 				"sear",
 				"__wgtSearchEdit"
-			],
-			[
-				"setfix",
-				"setFixedHeight	function"
-			],
-			[
-				"__lyt",
-				"__lytSearchBar"
 			],
 			[
 				"__sear",
@@ -68,20 +136,12 @@
 				"ViewMode	class"
 			],
 			[
-				"qt",
-				"QtWidgets	module"
-			],
-			[
 				"qlist",
 				"QListView	class"
 			],
 			[
 				"wind",
 				"QMainWindow	class"
-			],
-			[
-				"add",
-				"addLayout	function"
 			],
 			[
 				"qla",
@@ -226,10 +286,6 @@
 			[
 				"read",
 				"readlines	function"
-			],
-			[
-				"al",
-				"al_mat"
 			],
 			[
 				"comp",
@@ -384,7 +440,7 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 2498,
+				"buffer_size": 4330,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
 			}
@@ -607,7 +663,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 918.0,
+						"translation.y": 723.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -619,15 +675,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2498,
+						"buffer_size": 4330,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2457,
-								2457
+								2551,
+								2551
 							]
 						],
 						"settings":
@@ -636,7 +692,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 702.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
