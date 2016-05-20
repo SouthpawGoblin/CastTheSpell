@@ -5,6 +5,7 @@ main frame of the English-Chinese dictionary application
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+import dictionary_EC as ec
 import sys
 
 
@@ -22,6 +23,7 @@ class MainFrame(QMainWindow):
         self.__mTitle = r'CastTheSpell'
         self.__mVersion = r'Ver 0.0.1'
         self.__mMainIcon = QIcon(r'Resources\icons\dictionary.icns')
+        self.__mSearchPrompt = r'请输入要查询的单词'
 
         # widgets
         # main icon
@@ -37,22 +39,26 @@ class MainFrame(QMainWindow):
         self.__wgtCollapseButton.setFixedSize(25, 25)
         self.__wgtCollapseButton.clicked.connect(self.__slotCollapseButtom_Clicked)
         # search edit
-        self.__wgtSearchEdit = QTextEdit('输入要查询的单词')
+        self.__wgtSearchEdit = QLineEdit(self.__mSearchPrompt)
         self.__wgtSearchEdit.setFixedHeight(25)
+        self.__wgtSearchEdit.returnPressed.connect(self.__slotSearchButton_Clicked)
+        self.__wgtSearchEdit.installEventFilter(self)
         # search button
         self.__wgtSearchButton = QPushButton('查询')
         self.__wgtSearchButton.setFixedSize(50, 25)
+        self.__wgtSearchButton.clicked.connect(self.__slotSearchButton_Clicked)
         # setting button
         setting_icon = QIcon(r'Resources\icons\setting_gear.icns')
         self.__wgtSettingButton = QPushButton(setting_icon, '')
         self.__wgtSettingButton.setFixedSize(25, 25)
+        self.__wgtSettingButton.clicked.connect(self.__slotSettingButton_Clicked)
         # result list view
         self.__wgtResultListView = QListView()
         self.__wgtResultListView.resize(self.width(), self.height() - self.__wgtSearchEdit.height())
         # tray icon
         self.__wgtTrayIcon = QSystemTrayIcon(self.__mMainIcon)
         self.__wgtTrayIcon.setToolTip(self.__mTitle + ' ' + self.__mVersion)
-        self.__wgtTrayIcon.activated.connect(self.__slotTrayIcon_Triggered)
+        self.__wgtTrayIcon.installEventFilter(self)
         self.__wgtTrayIcon.show()
 
         # layout
@@ -90,15 +96,35 @@ class MainFrame(QMainWindow):
         self.setContentsMargins(self.__mMargins)
         self.setWindowFlags(Qt.FramelessWindowHint)
 
+    def eventFilter(self, obj, event):
+        if obj == self.__wgtSearchEdit:
+            # print(event)
+            if event.type() == QEvent.FocusIn:
+                self.__slotSearchEdit_FocusIn()
+            elif event.type() == QEvent.FocusOut:
+                self.__slotSearchEdit_FocusOut()
+        return False
+
     def __slotCollapseButtom_Clicked(self):
-        """collapse button clicked slot"""
         self.hide()
 
-    def __slotTrayIcon_Triggered(self):
-        self.show()
+    def __slotSearchButton_Clicked(self):
+        text = self.__wgtSearchEdit.text()
+        if text != self.__mSearchPrompt and text != '':
+            dictionary = ec.Dictionary()
+            result = dictionary.lookup_online(text)
+            print(result)
 
-    def __slotWindow_Close(self):
-        self.__wgtTrayIcon.hide()
+    def __slotSettingButton_Clicked(self):
+        pass
+
+    def __slotSearchEdit_FocusIn(self):
+        if self.__wgtSearchEdit.text().strip() == self.__mSearchPrompt:
+            self.__wgtSearchEdit.setText('')
+
+    def __slotSearchEdit_FocusOut(self):
+        if self.__wgtSearchEdit.text().strip() == '':
+            self.__wgtSearchEdit.setText(self.__mSearchPrompt)
 
 
 app = QApplication(sys.argv)

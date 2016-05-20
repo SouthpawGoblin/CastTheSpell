@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
+				"__slot",
+				"__slotSearchButton_Clicked"
+			],
+			[
+				"return",
+				"returnPressed	function"
+			],
+			[
+				"qt",
+				"Qt	class"
+			],
+			[
+				"qevent",
+				"QEnterEvent	class"
+			],
+			[
+				"focu",
+				"FocusOut	instance"
+			],
+			[
+				"selec",
+				"setSelection	function"
+			],
+			[
+				"type",
+				"type	function"
+			],
+			[
+				"qlien",
+				"QLineEdit	class"
+			],
+			[
+				"__wgt",
+				"__wgtSearchEdit"
+			],
+			[
+				"search",
+				"__wgtSearchEdit"
+			],
+			[
+				"focus",
+				"focusInEvent	function"
+			],
+			[
 				"de",
 				"destroyed	function"
 			],
 			[
 				"cl",
 				"closeEvent	function"
-			],
-			[
-				"__wgt",
-				"__wgtTrayIcon"
 			],
 			[
 				"qpix",
@@ -36,16 +76,8 @@
 				"__mMainIcon"
 			],
 			[
-				"__slot",
-				"__slotTrayIcon_LeftClicked"
-			],
-			[
 				"ena",
 				"setEnabled	function"
-			],
-			[
-				"qt",
-				"QtCore"
 			],
 			[
 				"click",
@@ -432,7 +464,7 @@
 			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 2701,
+				"buffer_size": 2650,
 				"line_ending": "Windows"
 			}
 		},
@@ -440,7 +472,7 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 4330,
+				"buffer_size": 5471,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
 			}
@@ -647,15 +679,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2701,
+						"buffer_size": 2650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								664,
-								664
+								2588,
+								2588
 							]
 						],
 						"settings":
@@ -663,7 +695,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 723.0,
+						"translation.y": 1155.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -675,15 +707,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4330,
+						"buffer_size": 5471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2551,
-								2551
+								4559,
+								4559
 							]
 						],
 						"settings":
@@ -692,7 +724,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 1728.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

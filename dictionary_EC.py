@@ -42,8 +42,8 @@ class Dictionary:
     Internet connection is required.
     """
 
-    def __init__(self, iciba_key=None):
-        self.__iciba_key = iciba_key
+    def __init__(self):
+        self.__iciba_key = '93F4227FB49EDC3B86240A6C2DBF178D'
 
     def __parse_entry_xml(self, xml_file):
         tree = ET.parse(xml_file)
@@ -78,6 +78,5 @@ class Dictionary:
 
 
 if __name__ == '__main__':
-    ICIBA_KEY = '93F4227FB49EDC3B86240A6C2DBF178D'
-    dic = Dictionary(ICIBA_KEY)
+    dic = Dictionary()
     print(dic.lookup_online(input()))
