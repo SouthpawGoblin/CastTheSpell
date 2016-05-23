@@ -40,6 +40,7 @@ class MainFrame(QMainWindow):
         self.__wgtCollapseButton.clicked.connect(self.__slotCollapseButtom_Clicked)
         # search edit
         self.__wgtSearchEdit = QLineEdit(self.__mSearchPrompt)
+        self.__wgtSearchEdit.setMinimumWidth(200)
         self.__wgtSearchEdit.setFixedHeight(25)
         self.__wgtSearchEdit.returnPressed.connect(self.__slotSearchButton_Clicked)
         self.__wgtSearchEdit.installEventFilter(self)
@@ -53,8 +54,8 @@ class MainFrame(QMainWindow):
         self.__wgtSettingButton.setFixedSize(25, 25)
         self.__wgtSettingButton.clicked.connect(self.__slotSettingButton_Clicked)
         # result list view
-        self.__wgtResultListView = QListView()
-        self.__wgtResultListView.resize(self.width(), self.height() - self.__wgtSearchEdit.height())
+        self.__wgtResultList = QListWidget()
+        self.__wgtResultList.resize(self.sizeHint())
         # tray icon
         self.__wgtTrayIcon = QSystemTrayIcon(self.__mMainIcon)
         self.__wgtTrayIcon.setToolTip(self.__mTitle + ' ' + self.__mVersion)
@@ -80,14 +81,14 @@ class MainFrame(QMainWindow):
         self.__lytMainLayout.setContentsMargins(self.__mMargins)
         self.__lytMainLayout.addLayout(self.__lytTitleBar)
         self.__lytMainLayout.addLayout(self.__lytSearchBar)
-        self.__lytMainLayout.addWidget(self.__wgtResultListView)
+        self.__lytMainLayout.addWidget(self.__wgtResultList)
         self.__lytMainLayout.setSizeConstraint(QLayout.SetMinimumSize)
 
         self.__wgtCentral = QWidget()
         self.__wgtCentral.setLayout(self.__lytMainLayout)
         self.setCentralWidget(self.__wgtCentral)
 
-        self.__wgtResultListView.setVisible(False)
+        # self.__wgtResultList.setVisible(False)
         self.resize(self.sizeHint())
 
         # init frame
@@ -110,13 +111,25 @@ class MainFrame(QMainWindow):
 
     def __slotSearchButton_Clicked(self):
         text = self.__wgtSearchEdit.text()
+        self.__wgtResultList.clear()
         if text != self.__mSearchPrompt and text != '':
             dictionary = ec.Dictionary()
             result = dictionary.lookup_online(text)
-            print(result)
+            if result is not None:
+                trans = result.getTranslation()
+                if len(trans) == 0:
+                    self.__wgtResultList.addItem('未找到该词的释义！')
+                    return
+                lst = []
+                lst.append(result.getKeyWord())
+                lst.append(result.getPhoneticSymbol())
+                for key, value in trans.items():
+                    lst.append('{} {}'.format(key.strip(), value.strip()))
+                self.__wgtResultList.addItems(lst)
+
 
     def __slotSettingButton_Clicked(self):
-        pass
+        self.__wgtResultList.clear()
 
     def __slotSearchEdit_FocusIn(self):
         if self.__wgtSearchEdit.text().strip() == self.__mSearchPrompt:

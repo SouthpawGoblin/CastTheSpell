@@ -14,26 +14,58 @@ class Entry:
     such as meaning, pronunciation, sample sentences....
     """
 
-    def __init__(self, key_word, translation={}, phonetic_symbol='',
+    def __init__(self, key_word, translation={}, phonetic_symbol='[]',
                  pron_file='', sample_sent=[]):
-        self.key_word = key_word
-        self.translation = translation
-        self.phonetic_symbol = phonetic_symbol
-        self.pron_file = pron_file
-        self.sample_sent = sample_sent
+        self.__key_word = key_word
+        self.__translation = translation
+        self.__phonetic_symbol = phonetic_symbol
+        self.__pron_file = pron_file
+        self.__sample_sent = sample_sent
 
     def __str__(self):
-        string = self.key_word + '\n' if self.key_word is not None else 'empty word\n'
-        if len(self.translation) == 0:
+        string = self.__key_word + '\n' if self.__key_word is not None else 'empty word\n'
+        if len(self.__translation) == 0:
             string += '未查到该词的释义！'
         else:
-            string += '[' + self.phonetic_symbol + ']\n'
-            string += self.pron_file + '\n'
-            for key, value in self.translation.items():
-                string += key + ' ' + value if key is not None else value
-            for sent in self.sample_sent:
-                string += sent
+            string += self.__phonetic_symbol + '\n'
+            string += self.__pron_file + '\n'
+            for key, value in self.__translation.items():
+                string += key + ' ' + value + '\n' if key is not None else value + '\n'
+            for sent in self.__sample_sent:
+                string += sent + '\n'
         return string
+
+    # getters
+    def getKeyWord(self):
+        return self.__key_word
+
+    def getPhoneticSymbol(self):
+        return self.__phonetic_symbol
+
+    def getPronFile(self):
+        return self.__pron_file
+
+    def getTranslation(self):
+        return self.__translation.copy()
+
+    def getSampleSent(self):
+        return self.__sample_sent.copy()
+
+    # setters
+    def setKeyWord(self, s):
+        self.__key_word = s.strip()
+
+    def setPhoneticSymbol(self, s):
+        self.__phonetic_symbol = s.strip()
+
+    def setPronFile(self, s):
+        self.__pron_file = s.strip()
+
+    def setTranslation(self, d):
+        self.__translation = d.copy()
+
+    def setSampleSent(self, l):
+        self.__sample_sent = l.copy()
 
 
 class Dictionary:
@@ -48,20 +80,24 @@ class Dictionary:
     def __parse_entry_xml(self, xml_file):
         tree = ET.parse(xml_file)
         root = tree.getroot()
-        key_word = root.find('key').text
+        key_word = root.find('key').text.strip()
         entry = Entry(key_word)
         ps = root.find('ps')
-        entry.phonetic_symbol = '' if ps is None else ps.text
+        entry.setPhoneticSymbol('[]' if ps is None else '[{}]'.format(ps.text.strip()))
         pf = root.find('pron')
-        entry.pron_file = '' if pf is None else pf.text
+        entry.setPronFile('' if pf is None else pf.text.strip())
         poses = root.findall('pos')
         transes = root.findall('acceptation')
+        tmp_dict = {}
         for idi in range(len(poses)):
-            entry.translation[poses[idi].text] = transes[idi].text
+            tmp_dict[poses[idi].text.strip()] = transes[idi].text.strip()
+        entry.setTranslation(tmp_dict)
+        tmp_lst = []
         for sent in root.findall('sent'):
-            orig = sent.find('orig').text
-            trans = sent.find('trans').text
-            entry.sample_sent.append(orig + trans)
+            orig = sent.find('orig').text.strip()
+            trans = sent.find('trans').text.strip()
+            tmp_lst.append('{}\n{}'.format(orig, trans))
+        entry.setSampleSent(tmp_lst)
         return entry
 
     def lookup_online(self, key_word):
@@ -79,4 +115,5 @@ class Dictionary:
 
 if __name__ == '__main__':
     dic = Dictionary()
-    print(dic.lookup_online(input()))
+    print(dic.lookup_online('no'))
+    print(dic.lookup_online('yes'))

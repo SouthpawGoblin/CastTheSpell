@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"set",
+				"setTranslation	function"
+			],
+			[
+				"trans",
+				"translation"
+			],
+			[
+				"setwidth",
+				"setMinimumWidth	function"
+			],
+			[
+				"qlist",
+				"QListWidgetItem	class"
+			],
+			[
 				"__slot",
 				"__slotSearchButton_Clicked"
 			],
@@ -120,10 +136,6 @@
 				"sizeHint	function"
 			],
 			[
-				"set",
-				"SetDefaultConstraint	instance"
-			],
-			[
 				"fra",
 				"frameGeometry	function"
 			],
@@ -166,10 +178,6 @@
 			[
 				"view",
 				"ViewMode	class"
-			],
-			[
-				"qlist",
-				"QListView	class"
 			],
 			[
 				"wind",
@@ -230,10 +238,6 @@
 			[
 				"sam",
 				"sample_sent	statement"
-			],
-			[
-				"trans",
-				"translation	statement"
 			],
 			[
 				"key",
@@ -464,7 +468,7 @@
 			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 2650,
+				"buffer_size": 3632,
 				"line_ending": "Windows"
 			}
 		},
@@ -472,7 +476,7 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 5471,
+				"buffer_size": 6012,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
 			}
@@ -616,6 +620,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"__wgtResultListView",
 			"tmp_lyt",
 			"wgtSearchButton",
 			"wgtSearchEdit",
@@ -628,6 +633,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"__wgtResultList",
 			"self.__lytSearchBar",
 			"self.__wgtSearchButton",
 			"self.__wgtSearchEdit"
@@ -679,15 +685,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2650,
+						"buffer_size": 3632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2588,
-								2588
+								2570,
+								2570
 							]
 						],
 						"settings":
@@ -695,7 +701,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1155.0,
+						"translation.y": 1289.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -707,15 +713,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5471,
+						"buffer_size": 6012,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4559,
-								4559
+								4822,
+								4822
 							]
 						],
 						"settings":
@@ -724,7 +730,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1728.0,
+						"translation.y": 1757.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
