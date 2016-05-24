@@ -4,12 +4,60 @@
 		"selected_items":
 		[
 			[
-				"set",
-				"setTranslation	function"
+				"cursor",
+				"OpenHandCursor	instance"
+			],
+			[
+				"trig",
+				"trigger	function"
+			],
+			[
+				"__sear",
+				"__actSearch"
+			],
+			[
+				"text",
+				"textChanged	function"
+			],
+			[
+				"stay",
+				"WindowStaysOnTopHint	instance"
 			],
 			[
 				"trans",
-				"translation"
+				"transes	statement"
+			],
+			[
+				"__wgttr",
+				"__wgtTrayIconMenu"
+			],
+			[
+				"__wgttra",
+				"__wgtTrayIcon"
+			],
+			[
+				"trigg",
+				"trigger	function"
+			],
+			[
+				"addse",
+				"addSeparator	function"
+			],
+			[
+				"trigger",
+				"triggered	function"
+			],
+			[
+				"add",
+				"addAction	function"
+			],
+			[
+				"__wgttray",
+				"__wgtTrayIconMenu"
+			],
+			[
+				"set",
+				"setTranslation	function"
 			],
 			[
 				"setwidth",
@@ -78,10 +126,6 @@
 			[
 				"__mma",
 				"__mMainIcon"
-			],
-			[
-				"add",
-				"addItem	function"
 			],
 			[
 				"qbox",
@@ -165,10 +209,6 @@
 			],
 			[
 				"sear",
-				"__wgtSearchEdit"
-			],
-			[
-				"__sear",
 				"__wgtSearchEdit"
 			],
 			[
@@ -459,7 +499,7 @@
 			"file": "CastTheSpell.py",
 			"settings":
 			{
-				"buffer_size": 34,
+				"buffer_size": 544,
 				"line_ending": "Windows",
 				"name": "print 'Hello World!'"
 			}
@@ -468,7 +508,7 @@
 			"file": "dictionary_EC.py",
 			"settings":
 			{
-				"buffer_size": 3632,
+				"buffer_size": 3630,
 				"line_ending": "Windows"
 			}
 		},
@@ -476,7 +516,7 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 6012,
+				"buffer_size": 6979,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
 			}
@@ -647,7 +687,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -656,15 +696,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 34,
+						"buffer_size": 544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								34,
-								34
+								283,
+								283
 							]
 						],
 						"settings":
@@ -676,7 +716,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -685,15 +725,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3632,
+						"buffer_size": 3630,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2570,
-								2570
+								87,
+								87
 							]
 						],
 						"settings":
@@ -701,10 +741,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1289.0,
+						"translation.y": 1404.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -713,15 +753,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6012,
+						"buffer_size": 6979,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4822,
-								4822
+								5905,
+								5905
 							]
 						],
 						"settings":
@@ -730,10 +770,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1757.0,
+						"translation.y": 2322.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

@@ -1,8 +1,7 @@
-#-*- encoding:utf-8 -*-
 """
-An English-Chinese dictionary module using iciba APIs.
+an English-Chinese dictionary module using iciba APIs.
 """
-
+# -*- encoding:utf-8 -*-
 import urllib.request as urlreq
 import xml.etree.ElementTree as ET
 
@@ -90,7 +89,7 @@ class Dictionary:
         transes = root.findall('acceptation')
         tmp_dict = {}
         for idi in range(len(poses)):
-            tmp_dict[poses[idi].text.strip()] = transes[idi].text.strip()
+            tmp_dict['' if poses[idi].text is None else poses[idi].text.strip()] = transes[idi].text.strip()
         entry.setTranslation(tmp_dict)
         tmp_lst = []
         for sent in root.findall('sent'):
@@ -115,5 +114,4 @@ class Dictionary:
 
 if __name__ == '__main__':
     dic = Dictionary()
-    print(dic.lookup_online('no'))
-    print(dic.lookup_online('yes'))
+    print(dic.lookup_online('d'))

@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import dictionary_EC as ec
-import sys
 
 
 class MainFrame(QMainWindow):
@@ -21,9 +20,23 @@ class MainFrame(QMainWindow):
         self.__mSize = QSize(300, 100)
         self.__mMargins = QMargins(3, 3, 3, 3)
         self.__mTitle = r'CastTheSpell'
-        self.__mVersion = r'Ver 0.0.1'
+        self.__mVersion = r'Ver 0.1.5'
         self.__mMainIcon = QIcon(r'Resources\icons\dictionary.icns')
         self.__mSearchPrompt = r'请输入要查询的单词'
+
+        # actions
+        # quit
+        self.__actQuit = QAction('退出', self)
+        self.__actQuit.triggered.connect(self.__slotQuit)
+        # restore
+        self.__actRestor = QAction('还原', self)
+        self.__actRestor.triggered.connect(self.__slotRestore)
+        # setting
+        self.__actSetting = QAction('设置', self)
+        self.__actSetting.triggered.connect(self.__slotSetting)
+        # search
+        self.__actSearch = QAction('查询', self)
+        self.__actSearch.triggered.connect(self.__slotSearch)
 
         # widgets
         # main icon
@@ -33,6 +46,7 @@ class MainFrame(QMainWindow):
         self.__wgtTitleLabel = QLabel('<b>' + self.__mTitle + ' </b>' + '<em>' + self.__mVersion + '</em>')
         self.__wgtTitleLabel.setAlignment(Qt.AlignCenter)
         self.__wgtTitleLabel.setFixedHeight(25)
+        self.__wgtTitleLabel.setCursor(Qt.OpenHandCursor)
         # collapse button
         collapse_icon = QIcon(r'Resources\icons\collapse.icns')
         self.__wgtCollapseButton = QPushButton(collapse_icon, '')
@@ -42,7 +56,8 @@ class MainFrame(QMainWindow):
         self.__wgtSearchEdit = QLineEdit(self.__mSearchPrompt)
         self.__wgtSearchEdit.setMinimumWidth(200)
         self.__wgtSearchEdit.setFixedHeight(25)
-        self.__wgtSearchEdit.returnPressed.connect(self.__slotSearchButton_Clicked)
+        self.__wgtSearchEdit.returnPressed.connect(self.__slotSearch)
+        self.__wgtSearchEdit.textChanged.connect(self.__slotSearch)
         self.__wgtSearchEdit.installEventFilter(self)
         # search button
         self.__wgtSearchButton = QPushButton('查询')
@@ -61,6 +76,14 @@ class MainFrame(QMainWindow):
         self.__wgtTrayIcon.setToolTip(self.__mTitle + ' ' + self.__mVersion)
         self.__wgtTrayIcon.installEventFilter(self)
         self.__wgtTrayIcon.show()
+        # tray icon menu
+        self.__wgtTrayIconMenu = QMenu(self.__mTitle)
+        self.__wgtTrayIconMenu.addAction(self.__actRestor)
+        self.__wgtTrayIconMenu.addSeparator()
+        self.__wgtTrayIconMenu.addAction(self.__actSetting)
+        self.__wgtTrayIconMenu.addSeparator()
+        self.__wgtTrayIconMenu.addAction(self.__actQuit)
+        self.__wgtTrayIcon.setContextMenu(self.__wgtTrayIconMenu)
 
         # layout
         self.__lytTitleBar = QHBoxLayout()
@@ -95,7 +118,7 @@ class MainFrame(QMainWindow):
         self.setWindowTitle('Cast the Spell ~!')
         self.setBaseSize(self.sizeHint())
         self.setContentsMargins(self.__mMargins)
-        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
 
     def eventFilter(self, obj, event):
         if obj == self.__wgtSearchEdit:
@@ -106,10 +129,17 @@ class MainFrame(QMainWindow):
                 self.__slotSearchEdit_FocusOut()
         return False
 
-    def __slotCollapseButtom_Clicked(self):
-        self.hide()
+    # action slots
+    def __slotQuit(self):
+        self.close()
 
-    def __slotSearchButton_Clicked(self):
+    def __slotRestore(self):
+        self.show()
+
+    def __slotSetting(self):
+        self.__wgtResultList.clear()
+
+    def __slotSearch(self):
         text = self.__wgtSearchEdit.text()
         self.__wgtResultList.clear()
         if text != self.__mSearchPrompt and text != '':
@@ -127,9 +157,15 @@ class MainFrame(QMainWindow):
                     lst.append('{} {}'.format(key.strip(), value.strip()))
                 self.__wgtResultList.addItems(lst)
 
+    # widget slots
+    def __slotCollapseButtom_Clicked(self):
+        self.hide()
+
+    def __slotSearchButton_Clicked(self):
+        self.__actSearch.trigger()
 
     def __slotSettingButton_Clicked(self):
-        self.__wgtResultList.clear()
+        self.__actSetting.trigger()
 
     def __slotSearchEdit_FocusIn(self):
         if self.__wgtSearchEdit.text().strip() == self.__mSearchPrompt:
@@ -140,12 +176,4 @@ class MainFrame(QMainWindow):
             self.__wgtSearchEdit.setText(self.__mSearchPrompt)
 
 
-app = QApplication(sys.argv)
-main_frame = MainFrame()
-desk_rect = app.desktop().availableGeometry()
-print(desk_rect.bottom())
-print(main_frame.frameSize().width(), main_frame.frameSize().height())
-main_frame.move(desk_rect.right() - main_frame.frameSize().width(), desk_rect.bottom() - main_frame.frameSize().height())
 
-main_frame.show()
-sys.exit(app.exec_())
