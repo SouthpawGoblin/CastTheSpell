@@ -1,42 +1,33 @@
 """
-main frame of the English-Chinese dictionary application
+settings frame
 """
 # -*- coding: utf-8 -*-
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-import dictionary_EC as ec
 
 
-class MainFrame(QMainWindow):
+class SettingsFrame(QDialog):
     """
-    class of main frame
+    class of the settings frame
     """
 
     def __init__(self):
-        super(MainFrame, self).__init__()
+        super(SettingsFrame, self).__init__()
 
         # private members
-        self.__mSize = QSize(300, 100)
+        self.__mSize = QSize(100, 300)
         self.__mMargins = QMargins(3, 3, 3, 3)
-        self.__mTitle = r'CastTheSpell'
-        self.__mVersion = r'Ver 0.1.5'
-        self.__mMainIcon = QIcon(r'Resources\icons\dictionary.icns')
-        self.__mSearchPrompt = r'请输入要查询的单词'
+        self.__mTitle = r'设置'
+        self.__mMainIcon = QIcon(r'Resources\icons\setting_gear.icns')
 
         # actions
         # quit
-        self.__actQuit = QAction('退出', self.)
+        self.__actQuit = QAction('退出', self)
         self.__actQuit.triggered.connect(self.__slotQuit)
-        # restore
-        self.__actRestor = QAction('还原', self)
-        self.__actRestor.triggered.connect(self.__slotRestore)
-        # setting
-        self.__actSetting = QAction('设置', self)
-        self.__actSetting.triggered.connect(self.__slotSetting)
-        # search
-        self.__actSearch = QAction('查询', self)
-        self.__actSearch.triggered.connect(self.__slotSearch)
+        # accept
+        self.__actAccept = QAction('确定', self)
+        self.__actAccept.triggered.connect(self.__slotAccept)
 
         # widgets
         # main icon
@@ -72,11 +63,10 @@ class MainFrame(QMainWindow):
         self.__wgtResultList = QListWidget()
         self.__wgtResultList.resize(self.sizeHint())
         # tray icon
-        self.__wgtTrayIcon = QSystemTrayIcon(self.__mMainIcon, self)
+        self.__wgtTrayIcon = QSystemTrayIcon(self.__mMainIcon)
         self.__wgtTrayIcon.setToolTip(self.__mTitle + ' ' + self.__mVersion)
-        self.__wgtTrayIcon.activated.connect(self.__slotTrayIcon_Activated)
+        self.__wgtTrayIcon.installEventFilter(self)
         self.__wgtTrayIcon.show()
-        self.__wgtTrayIcon.showMessage('', 'cast the spell')
         # tray icon menu
         self.__wgtTrayIconMenu = QMenu(self.__mTitle)
         self.__wgtTrayIconMenu.addAction(self.__actRestor)
@@ -123,6 +113,7 @@ class MainFrame(QMainWindow):
 
     def eventFilter(self, obj, event):
         if obj == self.__wgtSearchEdit:
+            # print(event)
             if event.type() == QEvent.FocusIn:
                 self.__slotSearchEdit_FocusIn()
             elif event.type() == QEvent.FocusOut:
@@ -131,7 +122,6 @@ class MainFrame(QMainWindow):
 
     # action slots
     def __slotQuit(self):
-        self.__wgtTrayIcon.setVisible(False)
         self.close()
 
     def __slotRestore(self):
@@ -175,7 +165,3 @@ class MainFrame(QMainWindow):
     def __slotSearchEdit_FocusOut(self):
         if self.__wgtSearchEdit.text().strip() == '':
             self.__wgtSearchEdit.setText(self.__mSearchPrompt)
-
-    def __slotTrayIcon_Activated(self, reason):
-        if reason == QSystemTrayIcon.DoubleClick:
-            self.__slotRestore()

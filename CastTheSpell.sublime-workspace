@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Qt",
+				"QtCore"
+			],
+			[
+				"qsys",
+				"QSystemTrayIcon	class"
+			],
+			[
+				"button",
+				"LeftButton	instance"
+			],
+			[
+				"__wgttray",
+				"__wgtTrayIcon"
+			],
+			[
+				"setting",
+				"SettingsFrame	class"
+			],
+			[
 				"cursor",
 				"OpenHandCursor	instance"
 			],
@@ -50,10 +70,6 @@
 			[
 				"add",
 				"addAction	function"
-			],
-			[
-				"__wgttray",
-				"__wgtTrayIconMenu"
 			],
 			[
 				"set",
@@ -516,9 +532,17 @@
 			"file": "main_frame.py",
 			"settings":
 			{
-				"buffer_size": 6979,
+				"buffer_size": 7218,
 				"line_ending": "Windows",
 				"name": "#-*- coding: utf-8 -*-"
+			}
+		},
+		{
+			"file": "settings_frame.py",
+			"settings":
+			{
+				"buffer_size": 6570,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -687,7 +711,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -703,8 +727,8 @@
 						"selection":
 						[
 							[
-								283,
-								283
+								61,
+								61
 							]
 						],
 						"settings":
@@ -716,7 +740,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -732,8 +756,8 @@
 						"selection":
 						[
 							[
-								87,
-								87
+								3544,
+								3544
 							]
 						],
 						"settings":
@@ -741,10 +765,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1404.0,
+						"translation.y": 1566.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -753,15 +777,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6979,
+						"buffer_size": 7218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5905,
-								5905
+								6768,
+								6768
 							]
 						],
 						"settings":
@@ -770,10 +794,40 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2322.0,
+						"translation.y": 2646.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "settings_frame.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								528,
+								528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
