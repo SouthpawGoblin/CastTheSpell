@@ -20,17 +20,17 @@ class MainFrame(QMainWindow):
         self.__mSize = QSize(300, 100)
         self.__mMargins = QMargins(3, 3, 3, 3)
         self.__mTitle = r'CastTheSpell'
-        self.__mVersion = r'Ver 0.1.5'
+        self.__mVersion = r'Ver 0.2.0'
         self.__mMainIcon = QIcon(r'Resources\icons\dictionary.icns')
         self.__mSearchPrompt = r'请输入要查询的单词'
 
         # actions
         # quit
-        self.__actQuit = QAction('退出', self.)
+        self.__actQuit = QAction('退出', self)
         self.__actQuit.triggered.connect(self.__slotQuit)
         # restore
-        self.__actRestor = QAction('还原', self)
-        self.__actRestor.triggered.connect(self.__slotRestore)
+        self.__actRestore = QAction('还原', self)
+        self.__actRestore.triggered.connect(self.__slotRestore)
         # setting
         self.__actSetting = QAction('设置', self)
         self.__actSetting.triggered.connect(self.__slotSetting)
@@ -76,10 +76,9 @@ class MainFrame(QMainWindow):
         self.__wgtTrayIcon.setToolTip(self.__mTitle + ' ' + self.__mVersion)
         self.__wgtTrayIcon.activated.connect(self.__slotTrayIcon_Activated)
         self.__wgtTrayIcon.show()
-        self.__wgtTrayIcon.showMessage('', 'cast the spell')
         # tray icon menu
         self.__wgtTrayIconMenu = QMenu(self.__mTitle)
-        self.__wgtTrayIconMenu.addAction(self.__actRestor)
+        self.__wgtTrayIconMenu.addAction(self.__actRestore)
         self.__wgtTrayIconMenu.addSeparator()
         self.__wgtTrayIconMenu.addAction(self.__actSetting)
         self.__wgtTrayIconMenu.addSeparator()
@@ -133,6 +132,7 @@ class MainFrame(QMainWindow):
     def __slotQuit(self):
         self.__wgtTrayIcon.setVisible(False)
         self.close()
+        QApplication.quit()
 
     def __slotRestore(self):
         self.show()
@@ -161,6 +161,7 @@ class MainFrame(QMainWindow):
     # widget slots
     def __slotCollapseButtom_Clicked(self):
         self.hide()
+        self.__wgtTrayIcon.showMessage('', '程序已最小化至托盘')
 
     def __slotSearchButton_Clicked(self):
         self.__actSearch.trigger()
